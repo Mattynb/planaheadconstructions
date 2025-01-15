@@ -6,7 +6,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: center;  
     gap: 80px;
     background-color: #003366;
     height: 80px;
@@ -22,7 +22,6 @@ body {
 
 .logo {
     display: flex;
-    align-items: flex-end;
     height: 100%;
     background-color: #003366;    
     border: 3px solid #003366;
@@ -35,7 +34,7 @@ body {
 
 .nav-links {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 30px;
 }
 
@@ -57,8 +56,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    margin-top: 5px;
     width: 100%;
-    height: 3px;
+    height: 5px;
     background-color: white;
     transform: scaleX(0);
     transition: transform 0.3s ease;
@@ -92,7 +92,7 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        justify-content: flex-start;
+        justify-content: center;
         padding: 0 20px;
         gap: 0;
     }
@@ -105,12 +105,13 @@ body {
         position: fixed;
         left: -100%;
         top: 80px;
+        z-index: -1;
         flex-direction: column;
         background-color: #003366;
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
         padding: 20px 0;
         gap: 0;
     }

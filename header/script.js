@@ -8,14 +8,11 @@ const links = document.querySelectorAll(".nav-links a");
 
 links.forEach(link => {
     const href = link.getAttribute("href");
-    console.log("Checking href:", href);
     
     if (current === "/" && href === "/") {
-        console.log("Matching home page");
         link.classList.add("active");
     }
     else if (href !== "/" && current.includes(href)) {
-        console.log("Matching other page:", href);
         link.classList.add("active");
     }
 });

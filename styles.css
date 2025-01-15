@@ -4,3 +4,63 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body, html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+
+.component {
+    width: 100%;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #003366;
+    text-align:right;
+    margin: 15vh 0 10vh  20%;
+}
+
+
+  
+.parallax {
+    /* The image used */
+    background-image: url('/assets/hero.jpg');
+
+    /* Full height */
+    min-height:60vh; 
+    min-width: 100vw;
+
+    /* Create the parallax scrolling effect */
+    background-attachment:fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  auto 100% ;
+    
+
+    z-index: -2;
+
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1rem;
+    }
+ 
+}
