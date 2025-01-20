@@ -58,9 +58,12 @@ body, html {
 
 }
 
+
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 1rem;
     }
+
  
 }
