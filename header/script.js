@@ -1,8 +1,5 @@
-console.log("here");
-
 // make link of current page active
 const current = location.pathname;
-console.log("Current pathname:", current);
 
 const links = document.querySelectorAll(".nav-links a");
 

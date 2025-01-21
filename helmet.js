@@ -53,6 +53,15 @@ window.onload = function () {
             else if (model && model.rotation.y <= -2) alt = true;
         }
 
+        // handle window resizing
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth/3;
+            const height = window.innerHeight/3;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+
         controls.update();
         renderer.render(scene, camera);
     }
