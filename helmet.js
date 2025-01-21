@@ -63,8 +63,8 @@ window.onload = function () {
 
     // handle window resizing
     window.addEventListener('resize', () => {
-        const width = min(window.innerWidth/3, 200);
-        const height = min(window.innerHeight/3, 200);
+        const width = Math.min(window.innerWidth/3, 200);
+        const height = Math.min(window.innerHeight/3, 200);
         
 
         renderer.setSize(width, height);
