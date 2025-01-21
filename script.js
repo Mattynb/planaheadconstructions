@@ -12,6 +12,14 @@ function loadHTML(elementId, url) {
         .catch(error => console.error('Error loading HTML:', error));
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadHTML('header', 'header');
+
+    loadHTML('footer', 'footer');
+});
+
+
 function loadFolder(folder) {
     // logs all HTML files in the folder
     fetch(folder)
@@ -30,10 +38,3 @@ function loadFolder(folder) {
         })
         .catch(error => console.error('Error loading folder:', error));
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadHTML('header', 'header');
-
-    loadHTML('footer', 'footer');
-});
