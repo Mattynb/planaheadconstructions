@@ -33,7 +33,7 @@ function loadFolder(folder) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadHTML('header', '/header');
+    loadHTML('header', 'header');
 
-    loadHTML('footer', '/footer');
+    loadHTML('footer', 'footer');
 });
