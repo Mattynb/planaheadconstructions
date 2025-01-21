@@ -10,7 +10,7 @@ function loadHTML(elementId, url) {
             // add stylesheet
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = url + '/style.css';
+            link.href = url + '/styles.css';
             document.head.appendChild(link);
             
             document.getElementById(elementId).innerHTML = data;
