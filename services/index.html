@@ -6,14 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quality Finish Carpentry in Massachusetts | Plan Ahead Constructions </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <script src="/script.js" type="module"></script>
+    <script src="/services/script.js"></script>
   </head>
   <body>
 
     <div id="header" class="component"></div>
-    <section class="about component">
 
+    <section class="services component">
+      <div class="services-text">
+        <h1>- WHAT WE CAN DO FOR YOU -</h1>
+        <h2>
+          Craftsmanship That Elevates Your Home.
+          <br>
+          <b>Click on a service to learn more.</b>
+        </h2>
+        <br><br>
+      </div>
+
+      <div class="services-grid">
+        <div class="service" onclick="openModal(0)">
+          <h1>FINISH CARPENTRY</h1>
+          <div class="img_container">
+            <img src="/assets/finish_carpentry.png" alt="Finish Carpentry">
+          </div>
+        </div>
+        <div class="service" onclick="openModal(1)">
+          <h1>CABINETRY</h1>
+          <div class="img_container">
+            <img src="/assets/cabinetry.jpg" alt="Cabinetry">
+          </div>
+        </div>
+        <div class="service" onclick="openModal(2)">
+          <h1>HOME IMPROVEMENT</h1>
+          <div class="img_container">
+            <img src="/assets/home_improvement.jpg" alt="Home Improvement">
+          </div>
+        </div>
+        <div class="service" onclick="openModal(3)">
+          <h1>CUSTOM FURNITURE</h1>
+          <div class="img_container">
+            <img src="/assets/custom_furniture.png" alt="Custom Furniture">
+          </div>
+        </div>
+        <div class="service" onclick="openModal(4)">
+          <h1>BUILT-INS</h1>
+          <div class="img_container">
+            <img src="/assets/built_in.png" alt="Built-In">
+          </div>
+        </div>
+        <div class="service" onclick="openModal(5)">
+          <h1>RESIDENTIAL CONSTRUCTION</h1>
+          <div class="img_container">
+            <img src="/assets/construction.jpg" alt="Commercial & Residential Construction">
+          </div>
+        </div>
+        
+      </div>
     </section> 
+    
     <div id="footer" class="component"></div>
+
+   <!-- Modal Structure -->
+    <div id="modal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <h1 class="modal-text" id="modal-title"></h1>
+        <img class="" id="modal-img">
+        <h2 class="modal-text" id="modal-description"></h2>
+      </div>
+      <div class="modal-nav">
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+      </div>
+    </div>
+
   </body>
 </html>
