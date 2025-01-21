@@ -6,7 +6,7 @@ const links = document.querySelectorAll(".nav-links a");
 links.forEach(link => {
     const href = link.getAttribute("href");
     
-    if (current === "/planaheadconstructions" && href === "/planaheadconstructions") {
+    if (current === "/planaheadconstructions/" && href === "/planaheadconstructions") {
         link.classList.add("active");
     }
     else if (href !== "/planaheadconstructions" && current.includes(href)) {
