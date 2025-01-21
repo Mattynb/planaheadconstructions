@@ -53,20 +53,26 @@ window.onload = function () {
             else if (model && model.rotation.y <= -2) alt = true;
         }
 
-        // handle window resizing
-        window.addEventListener('resize', () => {
-            const width = max(window.innerWidth/3, 200);
-            const height = max(window.innerHeight/3, 200);
-            
-
-            renderer.setSize(width, height);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-        });
+        
 
         controls.update();
         renderer.render(scene, camera);
     }
     animate();
+
+
+    // handle window resizing
+    window.addEventListener('resize', () => {
+        const width = min(window.innerWidth/3, 200);
+        const height = min(window.innerHeight/3, 200);
+        
+
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    });
+
 };
+
+
 

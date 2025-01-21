@@ -8,7 +8,35 @@
     <title>Quality Finish Carpentry in Massachusetts | Plan Ahead Constructions </title>
     <link rel="stylesheet" href="/planaheadconstructions/styles.css">
     <link rel="stylesheet" href="/planaheadconstructions/services/styles.css">
-    <script src="/planaheadconstructions/script.js" type="module"></script>
+    <script src="/planaheadconstructions/services/script.js"></script>
+    <script>
+      function loadHTML(elementId, url) {
+        fetch(url+ "/index.html")
+          .then(response => response.text())
+          .then(data => {
+
+            const script = document.createElement('script');
+            script.src = url + '/script.js';
+            document.body.appendChild(script);
+
+            // add stylesheet
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = url + '/styles.css';
+            document.head.appendChild(link);
+            
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => console.error('Error loading HTML:', error));
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        loadHTML('header', '/planaheadconstructions/header');
+
+        loadHTML('footer', '/planaheadconstructions/footer');
+      });
+    </script>
   </head>
   <body>
 
