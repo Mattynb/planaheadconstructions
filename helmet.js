@@ -25,7 +25,7 @@ window.onload = function () {
 
     const loader = new THREE.GLTFLoader();
     var model;
-    loader.load('assets/helmet.glb', (gltf) => {
+    loader.load('public/helmet.glb', (gltf) => {
         model = gltf.scene;
         model.scale.set(1, 1, 1);
         scene.add(model);
