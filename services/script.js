@@ -71,6 +71,12 @@ function loadHTML(elementId, url) {
       const script = document.createElement('script');
       script.src = url + '/script.js';
       document.body.appendChild(script);
+
+      // add stylesheet
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = url + '/style.css';
+      document.head.appendChild(link);
       
       document.getElementById(elementId).innerHTML = data;
     })

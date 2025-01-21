@@ -55,8 +55,10 @@ window.onload = function () {
 
         // handle window resizing
         window.addEventListener('resize', () => {
-            const width = window.innerWidth/3;
-            const height = window.innerHeight/3;
+            const width = max(window.innerWidth/3, 200);
+            const height = max(window.innerHeight/3, 200);
+            
+
             renderer.setSize(width, height);
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
