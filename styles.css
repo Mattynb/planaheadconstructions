@@ -41,7 +41,7 @@ body, html {
   
 .parallax {
     /* The image used */
-    background-image: url('/public/hero.jpg');
+    background-image: url('public/hero.jpg');
 
     /* Full height */
     min-height:60vh; 
