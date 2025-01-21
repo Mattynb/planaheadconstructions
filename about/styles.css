@@ -110,6 +110,8 @@ body, html {
 
     .family-image {
         min-height: 20vh;
-        background-size: auto  35% ;
+        background-size: auto 35%;
+        margin-top: 10vh;
+        background-position: center 15%;
     }
 }
