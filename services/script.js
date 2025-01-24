@@ -1,11 +1,11 @@
 
 const images = [
-    ['/planaheadconstructions/public/finish_carpentry.png', 'Finish Carpentry', 'Our finish carpentry services include crown molding, baseboards, wainscoting, and more.'],
-    ['/planaheadconstructions/public/cabinetry.jpg', 'Cabinetry', 'We sell and install prefab cabinets for kitchens, bathrooms, and offices.'],
-    ['/planaheadconstructions/public/home_improvement.jpg', 'Home Improvement', 'We offer a wide range of home improvement services'],
-    ['/planaheadconstructions/public/custom_furniture.png', 'Custom Furniture', 'We design and build custom furniture to fit your unique style and needs. Such as this unique Ox Cart Table.'],
-    ['/planaheadconstructions/public/built_in.png', 'Built-Ins', 'We design and build custom built-ins for your home such as bookcases and more.'],
-    ['/planaheadconstructions/public/construction.jpg', 'Residential Construction', 'We offer residential construction services, including new home construction, additions, and more.']
+    ['/public/finish_carpentry.png', 'Finish Carpentry', 'Our finish carpentry services include crown molding, baseboards, wainscoting, and more.'],
+    ['/public/cabinetry.jpg', 'Cabinetry', 'We sell and install prefab cabinets for kitchens, bathrooms, and offices.'],
+    ['/public/home_improvement.jpg', 'Home Improvement', 'We offer a wide range of home improvement services'],
+    ['/public/custom_furniture.png', 'Custom Furniture', 'We design and build custom furniture to fit your unique style and needs. Such as this unique Ox Cart Table.'],
+    ['/public/built_in.png', 'Built-Ins', 'We design and build custom built-ins for your home such as bookcases and more.'],
+    ['/public/construction.jpg', 'Residential Construction', 'We offer residential construction services, including new home construction, additions, and more.']
   ];
   let currentIndex = 0;
 

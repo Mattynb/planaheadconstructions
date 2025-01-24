@@ -20,7 +20,7 @@ function loadHTML(elementId, url) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadHTML('header', '/planaheadconstructions/header');
+    loadHTML('header', '/header');
 
-    loadHTML('footer', '/planaheadconstructions/footer');
+    loadHTML('footer', '/footer');
 });
