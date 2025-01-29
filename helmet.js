@@ -5,7 +5,7 @@ window.onload = function () {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth/3, window.innerHeight/3);
+    renderer.setSize(window.innerWidth/2.5, window.innerHeight/3);
     
     const container = document.getElementById('hero-canvas');
     // append in the front of the container rather than the back

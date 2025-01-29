@@ -5,7 +5,7 @@ const images = [
     ['/public/home_improvement.jpg', 'Home Improvement', 'We offer a wide range of home improvement services'],
     ['/public/custom_furniture.png', 'Custom Furniture', 'We design and build custom furniture to fit your unique style and needs. Such as this unique Ox Cart Table.'],
     ['/public/built_in.png', 'Built-Ins', 'We design and build custom built-ins for your home such as bookcases and more.'],
-    ['/public/construction.jpg', 'Residential Construction', 'We offer residential construction services, including new home construction, additions, and more.']
+    ['/public/construction.jpg', 'Residential', 'We offer residential construction services, including new home construction, additions, and more.']
   ];
   let currentIndex = 0;
 
