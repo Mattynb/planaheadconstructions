@@ -1,0 +1,354 @@
+/* Custom CSS for the canvas and overall layout */
+body {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow:scroll; /* Prevent body scroll when panning */
+}
+
+.cad-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 70vw;
+    max-width: 90vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* New style for header and controls container */
+.header-controls {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Space below the header/controls block */
+    gap: 10px; /* Gap between title and controls when wrapped */
+}
+
+
+canvas {
+    border: 2px solid #e2e8f0;
+    background-color: #ffffff;
+    cursor: crosshair; /* Default cursor for drawing mode */
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    touch-action: none; /* Prevents default touch actions like scrolling/zooming */
+}
+
+canvas.select-mode-cursor {
+    cursor: pointer; /* Cursor for select mode */
+}
+
+canvas.panning-cursor {
+    cursor: grabbing; /* Cursor when actively panning */
+}
+
+/* Specific cursor for moving an element */
+canvas.move-element-cursor {
+    cursor: grab;
+}
+canvas.move-element-cursor.active-drag {
+    cursor: grabbing;
+}
+
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    /* margin-bottom: 20px; Removed as it's now part of header-controls */
+}
+
+.btn {
+    padding: 10px; /* Padding for the icon-only state */
+    width: 40px; /* Fixed width for icon-only button */
+    height: 40px; /* Fixed height for icon-only button */
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out, background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #003366; /* Indigo 600 */
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center icon horizontally */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.btn i {
+    margin-right: 0; /* No margin initially */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    transition: margin-right 0.3s ease-in-out; /* Smooth transition for margin */
+}
+
+.btn span {
+    display: inline-block; /* Ensure span respects width/opacity */
+    max-width: 0; /* Initially hide text by setting max-width to 0 */
+    opacity: 0; /* Hide text visually */
+    overflow: hidden; /* Ensure text is clipped */
+    transition: max-width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for text */
+}
+
+.btn:hover {
+    width: 150px; /* Expanded width, adjust as needed based on longest text */
+    background-color: #4338ca; /* Indigo 700 */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    justify-content: flex-start; /* Align content to the left when expanded */
+    padding-left: 15px; /* Adjust padding for expanded state */
+    padding-right: 15px;
+}
+
+.btn:hover i {
+    margin-right: 8px; /* Add margin when expanded */
+}
+
+.btn:hover span {
+    max-width: 100px; /* Allow text to expand, adjust as needed */
+    opacity: 1; /* Make text visible */
+}
+
+.btn-clear {
+    background-color: #dc2626; /* Red 600 */
+}
+
+.btn-clear:hover {
+    background-color: #b91c1c; /* Red 700 */
+}
+
+.btn-active {
+    background-color: #10b981; /* Emerald 500 */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+.btn-active:hover {
+    background-color: #059669; /* Emerald 600 */
+}
+
+h1 {
+    color: #1a202c;
+    /* margin-bottom: 20px; Removed as it's now part of header-controls */
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin: 0; /* Remove default h1 margin */
+}
+
+/* Editing panel styles */
+#editPanel {
+    background-color: #f8fafc; /* Slate 50 */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    border: 1px solid #e2e8f0;
+
+    /* Fixed positioning to keep it visible */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#editPanel label {
+    font-weight: 600;
+    color: #334155; /* Slate 700 */
+    margin-bottom: 5px;
+}
+
+#editPanel input[type="number"],
+#editPanel input[type="text"] { /* Added style for text input */
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1; /* Slate 300 */
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#editPanel .panel-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 5px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#editPanel .panel-btn {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    background-color: #003366;
+    color: white;
+}
+
+#editPanel .panel-btn:hover {
+    background-color: #16a34a; /* Green 600 */
+}
+
+#editPanel .panel-btn-danger {
+    background-color: #ef4444; /* Red 500 */
+}
+#editPanel .panel-btn-danger:hover {
+    background-color: #dc2626; /* Red 600 */
+}
+
+/* Status message styles */
+#statusMessage {
+    min-height: 20px; /* Reserve space to prevent layout shifts */
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.875rem; /* text-sm */
+    color: #4b5563; /* Gray 600 */
+}
+.status-error {
+    color: #dc2626; /* Red 600 */
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cad-container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.75rem; /* text-3xl */
+    }
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn {
+        width: 100%; /* Full width on small screens */
+        padding: 10px 20px; /* Restore full padding */
+        justify-content: center; /* Center content */
+    }
+    .btn i {
+        margin-right: 8px; /* Always show margin on small screens */
+    }
+    .btn span {
+        max-width: none; /* Allow text to be visible */
+        opacity: 1; /* Make text visible */
+    }
+    .btn:hover {
+        width: 100%; /* No expansion needed as it's already full width */
+        padding-left: 20px; /* Restore full padding */
+        padding-right: 20px;
+    }
+    #editPanel {
+        padding: 10px;
+        bottom: 10px; /* Adjust for smaller screens */
+        width: calc(100% - 40px); /* Account for body padding */
+    }
+    #editPanel .panel-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #editPanel .panel-btn {
+        width: 100%;
+    }
+    .header-controls {
+        flex-direction: column; /* Stack title and controls vertically on small screens */
+        align-items: center;
+    }
+    .header-controls h1 {
+        margin-bottom: 10px; /* Add some space below title when stacked */
+    }
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Higher than editPanel */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+.modal-btn-confirm {
+    background-color: #dc2626; /* Red 600 */
+    color: white;
+}
+.modal-btn-confirm:hover {
+    background-color: #b91c1c; /* Red 700 */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.modal-btn-cancel {
+    background-color: #cbd5e1; /* Slate 300 */
+    color: #334155; /* Slate 700 */
+}
+.modal-btn-cancel:hover {
+    background-color: #a0aec0; /* Slate 400 */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

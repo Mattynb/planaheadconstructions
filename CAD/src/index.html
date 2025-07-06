@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cad-container">
+        <div class="header-controls">
+            <h1>Simple Web CAD</h1>
+            <div class="controls">
+                <button id="selectModeBtn" class="btn"><i class="fas fa-mouse-pointer"></i> <span>Select</span></button>
+                <button id="drawModeBtn" class="btn btn-active"><i class="fas fa-pencil-ruler"></i> <span>Draw</span></button>
+                <button id="addComponentBtn" class="btn"><i class="fas fa-plus-square"></i> <span>Add</span></button>
+                <button id="clearCanvasBtn" class="btn btn-clear"><i class="fas fa-trash-alt"></i> <span>Clear All</span></button>
+            </div>
+        </div>
+        <canvas id="cadCanvas"></canvas>
+
+        <!-- Status Message Area -->
+        <div id="statusMessage" class="text-sm text-gray-600"></div>
+    </div>
+
+    <!-- Editing Panel - Moved outside the main container for fixed positioning -->
+    <div id="editPanel">
+        <div id="wallLengthGroup" style="display: none;">
+            <label for="wallLengthInput">Wall Length (inches):</label>
+            <input type="number" id="wallLengthInput" step="0.1" min="0.1">
+        </div>
+        <div id="componentDimensionsGroup" style="display: none; flex-direction: column; gap: 10px;">
+            <label for="componentTitleInput">Title:</label>
+            <input type="text" id="componentTitleInput">
+            <div class="flex gap-4"> <!-- New div for width and height -->
+                <div class="flex-1">
+                    <label for="componentWidthInput">Width (inches):</label>
+                    <input type="number" id="componentWidthInput" step="0.1" min="0.1">
+                </div>
+                <div class="flex-1">
+                    <label for="componentHeightInput">Height (inches):</label>
+                    <input type="number" id="componentHeightInput" step="0.1" min="0.1">
+                </div>
+            </div>
+        </div>
+        <div class="panel-buttons">
+            <button id="moveElementBtn" class="panel-btn"><i class="fas fa-arrows-alt"></i>Move</button>
+            <button id="rotateElementBtn" class="panel-btn" style="display: none;"><i class="fas fa-sync-alt"></i>Rotate</button>
+            <button id="setDimensionsBtn" class="panel-btn">Set</button>
+            <button id="deleteElementBtn" class="panel-btn panel-btn-danger">Delete</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3>ARE YOU SURE YOU WANT TO DELETE EVERYTHING?</h3>
+            <div class="modal-buttons">
+                <button id="confirmYesBtn" class="modal-btn modal-btn-confirm">Yes</button>
+                <button id="confirmNoBtn" class="modal-btn modal-btn-cancel">No</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
