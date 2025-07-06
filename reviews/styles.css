@@ -1,0 +1,125 @@
+/* reviews/reviews.css */
+.reviews-strip {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+    padding: 30px 0; /* Adjusted padding as container handles horizontal */
+    flex-wrap: wrap;
+    background-color: transparent; /* Changed from blue */
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* White background for each card */
+    border-radius: 10px;
+    padding: 25px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.291);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.291);
+}
+
+.review-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 4px solid rgba(46, 89, 6, 0.785); /* Changed from blue to a subtle border */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.stars {
+    margin-top: 8px;
+    font-size: 1.2em;
+    color: #FFD700; /* Gold color */
+}
+
+.review-right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.review-text {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.291);
+}
+.date {
+    font-size: 0.85em;
+    color: #777;
+}
+
+.source {
+    font-size: 0.85em;
+    color: rgba(46, 89, 6, 0.785);
+    text-decoration: none;
+}
+
+.source:hover {
+    color: #004d00; /* Darker green on hover */
+    text-decoration: underline;
+}
+
+/* Responsive reviews */
+@media (max-width: 992px) {
+    .reviews-strip {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px; /* Slightly less gap when stacked */
+    }
+    .review-container {
+        max-width: 500px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .review-container {
+        padding: 20px;
+    }
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+    .review-text {
+        font-size: 0.7em;
+    }
+}

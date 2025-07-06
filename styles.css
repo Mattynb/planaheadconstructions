@@ -20,22 +20,6 @@ body, html {
 }
 
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-
-}
-
-.hero h1 {
-    font-size: 2rem;
-    font-weight: 300;
-    color: #003366;
-    text-align:right;
-    margin: 0 0 10vh  0;
-}
 
 
   
@@ -48,45 +32,9 @@ body, html {
     min-width: 100vw;
 
     /* Create the parallax scrolling effect */
-    background-attachment:fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:  auto 100% ;
-    
-
-    z-index: -2;
-
-}
-
-#hero-canvas {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    background-color: white;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-}
-
-@media (max-width: 1015px) {
-
-    #hero-canvas {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 10%;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
- 
+    background-size:  stretch 100% ;
 }
 
 
-@media (max-width: 450px) {
-    .hero h1 {
-        font-size: 1rem;
-    }
-}

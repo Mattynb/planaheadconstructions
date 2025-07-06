@@ -21,7 +21,8 @@ function loadHTML(elementId, url) {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML('header', 'header');
-
+    loadHTML('hero', 'hero');
+    loadHTML('reviews', 'reviews');
     loadHTML('footer', 'footer');
 });
 
