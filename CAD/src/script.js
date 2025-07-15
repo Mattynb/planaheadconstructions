@@ -399,7 +399,7 @@ function handleMouseDown(event) {
             elementOriginalY = selectedElement.y;
         } else if (selectedElement.type === 'wall') {
             wallOriginalStartX = selectedElement.start.x;
-            wallOriginalStartY = selectedElement.start.y;
+            wallOriginalStartY = selectedSelectedElement.start.y; // Corrected typo here
             wallOriginalEndX = selectedElement.end.x;
             wallOriginalEndY = selectedElement.end.y;
         }
@@ -571,7 +571,7 @@ function handleMouseUp(event) {
     } else if (isMoving && currentMode === 'moveElement') {
         isMoving = false;
         canvas.classList.remove('active-drag'); // Remove grabbing cursor
-        updateStatusMessage(`${selectedElement.type === 'wall' ? 'Wall' : selectedElement.text} moved.`, 'info');
+        updateStatusMessage(`${selectedElement.type === 'wall' ? 'wall' : selectedElement.text} moved.`, 'info');
         showEditPanel(selectedElement); // Re-show panel with potentially updated coordinates
     }
     else if (isPanning) {
@@ -859,7 +859,7 @@ deleteElementBtn.addEventListener('click', () => {
 });
 
 // Initial setup on page load
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => { // Changed from window.addEventListener('load')
     resizeCanvas();
     setActiveMode('drawWalls'); // Set initial mode
     updateStatusMessage('Welcome! Draw walls, add components, or select elements to edit.', 'info');

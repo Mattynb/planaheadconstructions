@@ -5,7 +5,8 @@ const images = [
     ['/public/home_improvement.jpg', 'Home Improvement', 'We offer a wide range of home improvement services'],
     ['/public/custom_furniture.png', 'Custom Furniture', 'We design and build custom furniture to fit your unique style and needs. Such as this unique Ox Cart Table.'],
     ['/public/built_in.png', 'Built-Ins', 'We design and build custom built-ins for your home such as bookcases and more.'],
-    ['/public/construction.jpg', 'Residential', 'We offer residential construction services, including new home construction, additions, and more.']
+    ['/public/cleaning.png', 'Cleaning Services', 'Our team provides professional cleaning services after construction and renovation projects for both commercial and residential clients. The PAC Cleaning Team is made up of insured, trained, and highly experienced professionals who have a proven track record of servicing residential and commercial properties throughout Massachusetts.'],
+    //['/public/construction.jpg', 'Residential', 'We offer residential construction services, including new home construction, additions, and more.']
   ];
   let currentIndex = 0;
 
@@ -25,7 +26,10 @@ const images = [
 
     if (currentIndex == 1) {
       // append a button to the modal that says "View Cabinets" and links to the cabinets page
-      modalDescription.insertAdjacentHTML('afterend', '<a href="https://www.pac-kb.com" class="modal-button">View Cabinets</a>');
+      if (!document.querySelector('.modal-button')) {
+        modalDescription.insertAdjacentHTML('afterend', '<a href="https://www.pac-kb.com" class="modal-button">View Cabinets</a>');
+      }
+
     } else {
       const modalButton = document.querySelector('.modal-button');
       if (modalButton) {

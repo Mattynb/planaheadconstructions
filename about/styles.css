@@ -24,7 +24,7 @@ body, html {
 
 }
 
-.about-text h1 {
+.family-image.about-text h1 {
     font-size: 2.5rem;
     color: #003366;
     font-weight: bold;
@@ -32,7 +32,7 @@ body, html {
     margin-bottom: 2rem;
 }
 
-.about-text h2 {
+.family-image.about-text h2 {
     font-size: 2rem;
     color: #4a4a4a;
     margin-bottom: 0.5rem;
@@ -47,13 +47,13 @@ body, html {
 
 .family-image {
     /* Background image styling */
-    background-image: url('/public/family.jpeg');
-    min-height: 40vh;
-    min-width: 70%;
+    background-image: url('/public/kinsella_1074.jpg');
+    min-height: 80vh;
+    min-width: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover 100%;
     position: relative;
 
     background-color: #003366;
@@ -108,8 +108,8 @@ body, html {
     }
 
     .family-image {
-        min-height: 20vh;
-        background-size: auto 35%;
+        min-height: 100vh;
+        background-size: auto 100%;
         margin-top: 10vh;
         background-position: center 15%;
     }
